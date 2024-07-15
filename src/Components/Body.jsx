@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RestaurantCard from './RestaurantCard'
 import {food_list  } from '../assets/assets'
 
-const Body = () => {
+const Body = () => { 
 
-  console.log("food_list:", food_list); 
+const [listOfRestaurant, setListOfRestaurant] = useState(food_list);
+
   return (
     <div className='body'>
-      <div className="search">
-        Search....
+      <div className="filter">
+        <button className='filter-btn' onClick={()=>{ 
+          const filterResList = food_list.filter((res)=> res.rating>4)
+          setListOfRestaurant(filterResList)          
+        }}>
+          Top Rated Restaurant
+        </button>
       </div>
       <div className="res-container">
-            {food_list.map((restaurant, index)=>{
+            {listOfRestaurant.map((restaurant, index)=>{
             return <RestaurantCard key={index} resData={restaurant} />
             })}
           

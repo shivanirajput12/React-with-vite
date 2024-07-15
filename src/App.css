@@ -63,3 +63,12 @@
     padding: 6px;
     font-weight: 200;
 }
+
+.filter-btn {
+    padding: 10px;
+    margin: 20px 0px 0px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(157, 243, 157);
+    border: none;
+}
