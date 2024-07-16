@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { LOGO_URL } from '../utils/Constants';
 
 const Header = () => {
+ const [btnName , setBtnName]= useState("Login");
+  // let btnName = "login";
   return (
     <div className='header'>
       <div className="logo">
-        <img src="https://t3.ftcdn.net/jpg/02/41/30/72/360_F_241307210_MjjaJC3SJy2zJZ6B7bKGMRsKQbdwRSze.jpg" alt="logo image" />
+        <img src={LOGO_URL} />
       </div>
       <div className="nav-items">
         <ul>
@@ -12,6 +15,11 @@ const Header = () => {
         <li>About</li>
         <li>Contact</li>
         <li>Cart</li>
+        <button className='login'  onClick={()=>{
+          setBtnName("logout")
+          btnName === "Login" ? setBtnName("Logout"):setBtnName("Login")
+        }}>
+          {btnName}</button>
         </ul>
       </div>
     </div>

@@ -1,18 +1,26 @@
 import React from 'react'
+import { CDN_URL } from '../utils/Constants';
 
 const RestaurantCard = (props) => {
   const {resData}= props;
-  console.log(props);
-  const {name, image, price, rating, description, category} = resData; 
-  return (
-      
+  const {
+    cloudinaryImageId,
+    name,
+    avgRating,
+    cuisines,
+    costForTwo
+,
+    deliveryTime,
+  } = resData;
+  console.log(name);
+  return (  
     <div className='res-card' style={{backgroundColor:'#f1f1f1'}}>
+      <img className='res-logo' src={CDN_URL+ cloudinaryImageId} alt="res-logo" />
       <h3>{name}</h3>
-      <img src={image}/>
-      <h4>{price}</h4>
-      <h4>{rating}</h4>
-      <h4>{description}</h4>
-      <h4>{category}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{costForTwo} FOR TWO</h4>
+      <h4>{deliveryTime} minutes</h4>
     </div>
   )
 }
