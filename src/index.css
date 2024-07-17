@@ -72,6 +72,10 @@
     border-radius: 10px;
 }
 
+.nav-items {
+    cursor: pointer;
+}
+
 .nav-items .login {
     width: 50px;
     height: 35px;
