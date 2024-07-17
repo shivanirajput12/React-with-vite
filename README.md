@@ -13,18 +13,18 @@ Currently, two official plugins are available:
 - by the facebook it returns
 - they have written inside react import
 
-// how we can use it -
+# how we can use it -
 - two very imp hook (80-90% will be write this)
 1) useState()  = superpowerfull state variable in react  
 2) useEffect()
 
 
-//Local state variable = super powerful variable
+# Local state variable = super powerful variable
 const [listOfRestaurant, setListOfRestaurant] = useState(food_list);
 
-//array destructuring
-// const arr = useState(food_list)
-// const [listOfRestaurant, setListOfRestaurant] = arr;
-// const listOfRestaurant = arr[0]
-// const setListOfRestaurant = arr[1]
+- array destructuring
+- const arr = useState(food_list)
+- const [listOfRestaurant, setListOfRestaurant] = arr;
+- const listOfRestaurant = arr[0]
+- const setListOfRestaurant = arr[1]
 
