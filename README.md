@@ -45,5 +45,8 @@ const [listOfRestaurant, setListOfRestaurant] = useState(food_list);
 - const listOfRestaurant = arr[0]
 - const setListOfRestaurant = arr[1]
 
+# In react we have two types of routing 
+1) Client side routing
+2) Server side routing
 
 
