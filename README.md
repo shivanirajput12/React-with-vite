@@ -50,3 +50,5 @@ const [listOfRestaurant, setListOfRestaurant] = useState(food_list);
 2) Server side routing
 
 
+# React Strict Mode: 
+If you're using React Strict Mode, it will intentionally re-render components to detect unexpected side effects. This can cause the componentDidMount method to be called twice.
