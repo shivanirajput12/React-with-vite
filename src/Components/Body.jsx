@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -25,6 +26,10 @@ const Body = () => {
     );
   };
 
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1>Looks like you are offline , please connect your internet.</h1>;
+  }
   //Conditional Rendering-page render on the bases of some condition
   return (
     <>
@@ -72,11 +77,11 @@ const Body = () => {
           </div>
           <div className="res-container">
             {filteredRes?.map((restaurant) => (
-              <Link className="my-link"
+              <Link
+                className="my-link"
                 key={restaurant.info.id}
                 to={"/restaurants/" + restaurant.info.id}
               >
-                
                 <RestaurantCard resData={restaurant.info} />
               </Link>
             ))}
