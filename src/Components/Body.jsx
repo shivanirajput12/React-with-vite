@@ -37,11 +37,11 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div className="body">
-          <div className="filter">
-            <div className="search">
+          <div className="filter flex">
+            <div className="search m-4 p-4 ">
               <input
                 type="text"
-                className="search-box"
+                className="border border-solid border-black rounded-md"
                 value={searchText}
                 onChange={(event) => {
                   setSearchText(event.target.value);
@@ -50,7 +50,7 @@ const Body = () => {
               {/* filter the restaurant cards and update the UI*/}
               {/* search-text needs us */}
               <button
-                className="search-btn"
+                className="px-4 py-1 m-4 bg-green-400 rounded-lg"
                 onClick={() => {
                   const filteredRes = listOfRestaurant.filter((res) =>
                     res.info.name
@@ -63,22 +63,23 @@ const Body = () => {
                 Search
               </button>
             </div>
-            <button
-              className="filter-btn"
-              onClick={() => {
-                const filteredList = listOfRestaurant.filter(
-                  (res) => res.info.avgRating > 4.5
-                );
-                setFilteredRes(filteredList);
-              }}
-            >
-              Top Rated Restaurant
-            </button>
+            <div className="flex items-center">
+              <button
+                className="px-4 py-1 bg-gray-300 rounded-lg"
+                onClick={() => {
+                  const filteredList = listOfRestaurant.filter(
+                    (res) => res.info.avgRating > 4.5
+                  );
+                  setFilteredRes(filteredList);
+                }}
+              >
+                Top Rated Restaurant
+              </button>
+            </div>
           </div>
-          <div className="res-container">
+          <div className="flex flex-wrap pl-3">
             {filteredRes?.map((restaurant) => (
               <Link
-                className="my-link"
                 key={restaurant.info.id}
                 to={"/restaurants/" + restaurant.info.id}
               >
