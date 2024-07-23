@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -30,6 +31,9 @@ const Body = () => {
   if (onlineStatus === false) {
     return <h1>Looks like you are offline , please connect your internet.</h1>;
   }
+
+  const { setUserName, loggedInUser } = useContext(UserContext);
+
   //Conditional Rendering-page render on the bases of some condition
   return (
     <>
@@ -75,6 +79,14 @@ const Body = () => {
               >
                 Top Rated Restaurant
               </button>
+            </div>
+            <div className=" m-4 p-4 flex items-center">
+              <label>UserName: </label>
+              <input
+                className=" border border-black m-2 p-1"
+                value={loggedInUser}
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </div>
           </div>
           <div className="flex flex-wrap pl-3">

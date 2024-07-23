@@ -7,7 +7,7 @@ const User = ({ name }) => {
   useEffect(() => {
     //api call
     const timer = setInterval(() => {
-      console.log("hello timer,1000");
+      // console.log("hello timer,1000");
     }, 1000);
     console.log("useEffect ");
     return () => {

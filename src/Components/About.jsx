@@ -1,6 +1,7 @@
 import React from "react";
 import UserClass from "./UserClass";
 import User from "./User";
+import UserContext from "../utils/UserContext";
 
 //functional component
 
@@ -22,18 +23,27 @@ import User from "./User";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent constructor");
+    // console.log("Parent constructor");
   }
 
   componentDidMount() {
-    console.log("parent componentDidMount");
+    // console.log("parent componentDidMount");
   }
   render() {
-    console.log(" parent Render");
+    // console.log(" parent Render");
     return (
       <div className="about">
         <h1>About</h1>
+
         <h2>hellooo about</h2>
+        <div>
+          LoggedIn User
+          <UserContext.Consumer>
+            {({ loggedInUser }) => (
+              <h1 className="text-xl font-bold">{loggedInUser}</h1>
+            )}
+          </UserContext.Consumer>
+        </div>
         <UserClass
           name={"Shivani Rajput (class)"}
           location={"Indore"}
