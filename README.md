@@ -54,3 +54,12 @@ const [listOfRestaurant, setListOfRestaurant] = useState(food_list);
 # React Strict Mode:
 
 If you're using React Strict Mode, it will intentionally re-render components to detect unexpected side effects. This can cause the componentDidMount method to be called twice.
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice )
+- Dispatch(action)
+- Selector
